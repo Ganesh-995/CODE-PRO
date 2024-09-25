@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test</title>
+  </head>
+  <body>
+    <!-- =========|style|========= -->
+    <style>
+      .pclass {
+        background-color: brown;
+      }
+    </style>
+    <!-- =========|style end|========= -->
+    <!-- =========|Main Section|========= -->
+    <button id="btn" onclick="ko">jay</button>
+    <div class="container2">hide thi text</div>
+    <!-- =========|Main Section End|========= -->
+
+    <!-- =========|Script Section|========= -->
+    <script>
+      let timeLeft = 10;
+      function ko() {
+        startTimer();
+      }
+
+      function startTimer() {
+        timeLeft = 10;
+        document.getElementById("container2").innerText = `Time: ${timeLeft}s`;
+        timerInterval = setInterval(() => {
+          timeLeft--;
+          document.getElementById("timer").innerText = `Time: ${timeLeft}s`;
+          if (timeLeft === 0) {
+            clearInterval(timerInterval);
+            checkAnswer(null); // Time's up
+          }
+        }, 1000);
+      }
+    </script>
+    <!-- =========|Script Section End|========= -->
+  </body>
+</html>
